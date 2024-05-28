@@ -1,0 +1,32 @@
+{
+  "name": "simple-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dumy": "node ./migrations/migrate.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wildanfaz/simple-app.git"
+  },
+  "author": "Muhamad Wildan Faz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wildanfaz/simple-app/issues"
+  },
+  "homepage": "https://github.com/wildanfaz/simple-app#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "path": "^0.12.7",
+    "pg": "^8.11.5",
+    "validator": "^13.12.0",
+    "winston": "^3.13.0"
+  },
+  "type": "module"
+}

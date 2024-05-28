@@ -1,0 +1,29 @@
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    environment:
+      - NODE_ENV=${NODE_ENV:-development}
+      - APP_PORT=${APP_PORT:-3000}
+      - DB_USER=${DB_USER:-postgres}
+      - DB_HOST=${DB_HOST:-localhost}
+      - DB_NAME=${DB_NAME:-simple-app}
+      - DB_PASSWORD=${DB_PASSWORD:-secret}
+      - JWT_SECRET=${JWT_SECRET:-secret}
+    env_file:
+      - .env
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: simple-app
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./migrations:/docker-entrypoint-initdb.d
